@@ -1,8 +1,9 @@
 {
   "name": "terminal-and-code-error-sound-alert-by-ashish-goswami",
-  "displayName": "Error Sound Alert by Ashish Goswami",
-  "description": "Plays audible alerts when code errors or terminal command failures occur.",
-  "version": "1.0.0",
+  "displayName": "Error Sound Alerts: Code & Terminal Notifications",
+  "description": "Get instant audible feedback when code errors or terminal command failures occur. Catch bugs faster with customizable sound alerts.",
+  "version": "1.0.1",
+  "icon": "icon.jpeg",
   "author": {
     "name": "Ashish Goswami",
     "url": "https://www.linkedin.com/in/ashish-goswami-58797a24a/"
@@ -16,7 +17,19 @@
     "vscode": "^1.93.0"
   },
   "categories": [
+    "Programming Languages",
+    "Linters",
     "Other"
+  ],
+  "keywords": [
+    "error",
+    "sound",
+    "alert",
+    "debugging",
+    "terminal",
+    "productivity",
+    "developer tools",
+    "notification"
   ],
   "activationEvents": [
     "*"
