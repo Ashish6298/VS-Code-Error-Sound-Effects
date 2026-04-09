@@ -35,3 +35,10 @@ This extension contributes the following settings:
 ## License
 
 This project is licensed under the MIT License.
+
+---
+
+### Author
+**Ashish Goswami**  
+- [GitHub](https://github.com/Ashish6298)  
+- [LinkedIn](https://www.linkedin.com/in/ashish-goswami-58797a24a/)

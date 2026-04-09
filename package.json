@@ -1,9 +1,17 @@
 {
-  "name": "error-sound-alert",
-  "displayName": "Error Sound Alert",
-  "description": "Plays a configurable sound when new code errors appear in your editor.",
+  "name": "terminal-and-code-error-sound-alert-by-ashish-goswami",
+  "displayName": "Error Sound Alert by Ashish Goswami",
+  "description": "Plays audible alerts when code errors or terminal command failures occur.",
   "version": "1.0.0",
-  "publisher": "antigravity",
+  "author": {
+    "name": "Ashish Goswami",
+    "url": "https://www.linkedin.com/in/ashish-goswami-58797a24a/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ashish6298/VS-Code-Error-Sound-Effects.git"
+  },
+  "publisher": "AshishGoswami",
   "engines": {
     "vscode": "^1.93.0"
   },

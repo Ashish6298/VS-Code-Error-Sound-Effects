@@ -295,7 +295,12 @@ export class WebviewAudioHost implements vscode.WebviewViewProvider {
               </div>
 
               <div class="footer">
-                  Error Sound Alert v1.0.0
+                  <div style="margin-bottom: 4px;">Error Sound Alert v1.0.0</div>
+                  <div style="opacity: 0.8;">Developed by <b>Ashish Goswami</b></div>
+                  <div style="margin-top: 8px; display: flex; justify-content: center; gap: 12px;">
+                      <a href="https://github.com/Ashish6298" style="color: var(--dim-text); text-decoration: none;" title="GitHub Profile">GitHub</a>
+                      <a href="https://www.linkedin.com/in/ashish-goswami-58797a24a/" style="color: var(--dim-text); text-decoration: none;" title="LinkedIn Profile">LinkedIn</a>
+                  </div>
               </div>
           </div>
 
