@@ -1,0 +1,177 @@
+{
+  "name": "error-sound-alert",
+  "displayName": "Error Sound Alert",
+  "description": "Plays a configurable sound when new code errors appear in your editor.",
+  "version": "1.0.0",
+  "publisher": "antigravity",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./dist/extension.js",
+  "browser": "./dist/browser.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "error-sound-alert-view",
+          "title": "Error Sound",
+          "icon": "$(unmute)"
+        }
+      ]
+    },
+    "views": {
+      "error-sound-alert-view": [
+        {
+          "type": "webview",
+          "id": "errorSoundAlert.audioView",
+          "name": "Audio Status"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "errorSoundAlert.addSoundToLibrary",
+        "title": "Error Sound Alert: Add Sound to Library",
+        "category": "Error Sound Alert"
+      },
+      {
+        "command": "errorSoundAlert.selectCustomSound",
+        "title": "Error Sound Alert: Select Custom Error Sound",
+        "category": "Error Sound Alert"
+      },
+      {
+        "command": "errorSoundAlert.testSound",
+        "title": "Error Sound Alert: Test Error Sound",
+        "category": "Error Sound Alert"
+      },
+      {
+        "command": "errorSoundAlert.resetSound",
+        "title": "Error Sound Alert: Reset Error Sound to Default",
+        "category": "Error Sound Alert"
+      },
+      {
+        "command": "errorSoundAlert.toggleMute",
+        "title": "Error Sound Alert: Toggle Mute",
+        "category": "Error Sound Alert"
+      },
+      {
+        "command": "errorSoundAlert.showStatus",
+        "title": "Error Sound Alert: Show Error Sound Status",
+        "category": "Error Sound Alert"
+      }
+    ],
+    "configuration": {
+      "title": "Error Sound Alert",
+      "properties": {
+        "errorSoundAlert.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable Error Sound Alert."
+        },
+        "errorSoundAlert.audioSource": {
+          "type": "string",
+          "enum": [
+            "bundled",
+            "custom"
+          ],
+          "default": "bundled",
+          "description": "Choose between the default bundled sound or a custom audio file."
+        },
+        "errorSoundAlert.customAudioPath": {
+          "type": "string",
+          "default": "",
+          "description": "Absolute path to the custom audio file (MP3, WAV, etc.).",
+          "scope": "machine"
+        },
+        "errorSoundAlert.scope": {
+          "type": "string",
+          "enum": [
+            "activeFile",
+            "openFiles",
+            "workspace"
+          ],
+          "default": "activeFile",
+          "description": "Which diagnostics to monitor for error sounds."
+        },
+        "errorSoundAlert.debounceMs": {
+          "type": "number",
+          "default": 500,
+          "description": "Milliseconds to wait after typing stops before checking for new errors."
+        },
+        "errorSoundAlert.cooldownMs": {
+          "type": "number",
+          "default": 2000,
+          "description": "Minimum milliseconds between consecutive sound playbacks."
+        },
+        "errorSoundAlert.triggerOnWarnings": {
+          "type": "boolean",
+          "default": false,
+          "description": "Also play sound for warnings (Severity: Warning)."
+        },
+        "errorSoundAlert.triggerOnTerminalError": {
+          "type": "boolean",
+          "default": true,
+          "description": "Play sound when a terminal command fails (non-zero exit code)."
+        },
+        "errorSoundAlert.activeSoundId": {
+          "type": "string",
+          "default": "default",
+          "description": "The ID of the currently selected sound from the library."
+        },
+        "errorSoundAlert.volume": {
+          "type": "number",
+          "default": 0.5,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Volume of the error sound (0.0 to 1.0)."
+        },
+        "errorSoundAlert.mute": {
+          "type": "boolean",
+          "default": false,
+          "description": "Mute all sounds temporarily."
+        },
+        "errorSoundAlert.logLevel": {
+          "type": "string",
+          "enum": [
+            "info",
+            "debug",
+            "error",
+            "none"
+          ],
+          "default": "info",
+          "description": "Level of detail for logs in the Output Channel."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.36.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5",
+    "ts-loader": "^9.4.2",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1",
+    "@vscode/test-electron": "^2.3.0"
+  }
+}

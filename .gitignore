@@ -1,0 +1,21 @@
+# Dependency directories
+node_modules/
+
+# Build directories
+dist/
+out/
+
+# Extension packaging
+*.vsix
+
+# Assets (as requested)
+assets/
+
+# VS Code temporary files
+.vscode-test/
+.history/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
